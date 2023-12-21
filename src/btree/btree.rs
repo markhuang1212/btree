@@ -13,6 +13,7 @@ use super::iter::BTreeIter;
 
 #[derive(Debug, Clone)]
 /// The BTree data structure. It wraps a BTreeNode which contains most of the method's implementation.
+/// It will shorten or merge the top node when needed in order to maintain the BTree property.
 pub struct BTree<T> {
     bucket_size: usize,
     root: Box<BTreeNode<T>>,
